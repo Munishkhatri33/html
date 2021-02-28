@@ -1,4 +1,4 @@
-<script>
+
    const preloader = document.querySelector('.preloader');
 
 const fadeEffect = setInterval(() => {
@@ -14,4 +14,4 @@ const fadeEffect = setInterval(() => {
 }, 200);
 
 window.addEventListener('load', fadeEffect);
-   </script>
+   
