@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My favourite songs</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--	<meta name="viewport" content="width=device-width">-->
+<style type="text/css">
+    html{ background: url(bg.svg);
+    background-size: 1368px 4923px; 
+ }
+	.song{
+		font-style: normal;
+		font-family:  'Comfortaa', cursive;
+		color: gold;
+		
+	}
+	.welcome{
+	    border: green 5px ridge;
+		border-bottom-left-radius: 13px;
+		border-top-left-radius: 13px;
+		border-top-right-radius: 13px;
+		border-bottom-right-radius: 13px;
+		border-top-color: red;
+		border-bottom-color: green;
+		border-left-color: aqua;
+		border-right-color: darkorange;
+	}
+	.welcome{
+		font-style: normal;
+		font-family:  'Comfortaa', cursive;
+		color: gold;
+	}
+</style>
+<!--<style>
+   body{
+	
+   background-color: ;
+}
+</style>-->
+
+<link rel="stylesheet" type="text/css" href="Static.css">
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@594&display=swap" rel="stylesheet">
+<link rel="icon" href="https://img.icons8.com/ios/2x/fa314a/apple-music.png"/>
+</head>
+<body>
+ 
+
+<div>
+	<div style="color:gold;font-size:14px;font-family:'Comfortaa',cursive;font-weight:bold;font-style:normal;text-align:left;text-decoration:none" id="basicclock"></div>
+<script type="text/javascript">
+function clock() 
+{
+   var digital = new Date();
+   var hours = digital.getHours();
+   var minutes = digital.getMinutes();
+   var seconds = digital.getSeconds();
+   if (minutes <= 9) minutes = "0" + minutes;
+   if (seconds <= 9) seconds = "0" + seconds;
+   dispTime = hours + ":" + minutes + ":" + seconds;
+
+   var basicclock = document.getElementById('basicclock');
+   basicclock.innerHTML = dispTime;
+   setTimeout("clock()", 1000);
+}
+clock();
+</script>
+
+<!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<div style="color:gold;font-size:14px;font-family:'Comfortaa',cursive;font-weight:bold;font-style:italic;text-align:right;text-decoration:underline" id="basicdate"></div>
+<script type="text/javascript">
+   var now = new Date();
+   var days = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+   var months = new Array('January','February','March','April','May','June','July','August','September','October','November','December');
+   var date = ((now.getDate() < 10) ? "0" : "") + now.getDate();
+   var year = (now.getYear() < 1000) ? now.getYear() + 1900 : now.getYear();
+   today = days[now.getDay()] + ", " + months[now.getMonth()] + " " + date + ", " + year;
+   var basicdate = document.getElementById('basicdate');
+   basicdate.innerHTML = today;
+</script>
+
+<!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<br>
+<div style="color:gold;font-family:'Comfortaa',cursive;font-size:34px;font-weight:bold;font-style:normal;text-align:center;text-decoration:none" id="Fly">"जाट के ठाठ"</div>
+<script type="text/javascript">
+
+message = document.getElementById("Fly").innerHTML; // $ = taking a new line
+distance = 50;
+speed = 200;
+var txt="",
+num=0,
+num4=0,
+flyofle="",
+flyofwi="",
+flyofto="",
+fly=document.getElementById("Fly");
+
+function stfly() 
+{
+   for(i=0;i != message.length;i++) 
+   {
+      if(message.charAt(i) != "$")
+         txt += "<span style='position:relative;visibility:hidden;' id='n"+i+"'>"+message.charAt(i)+"<\/span>";
+      else
+         txt += "<br>";
+   }
+   fly.innerHTML = txt;
+   txt = "";
+   flyofle = fly.offsetLeft;
+   flyofwi = fly.offsetWidth;
+   flyofto = fly.offsetTop;
+   fly2b();
+}
+
+function fly2b() 
+{
+   if(num4 != message.length) 
+   {
+      if(message.charAt(num4) != "$") 
+      {
+         var then = document.getElementById("n" + num4);
+         then.style.left = (flyofle - then.offsetLeft + flyofwi / 2) + "px";
+         then.style.top = (flyofto - then.offsetTop + distance) + "px";;
+         fly3(then.id, parseInt(then.style.left), parseInt(then.style.left) / 5, parseInt(then.style.top), parseInt(then.style.top) / 5);
+      }
+      num4++;
+      setTimeout("fly2b()", speed);
+   }
+}
+
+function fly3(target,lef2,num2,top2,num3) 
+{
+   if((Math.floor(top2) != 0 && Math.floor(top2) != -1) || (Math.floor(lef2) != 0 && Math.floor(lef2) != -1)) 
+   {
+      if(lef2 >= 0)
+         lef2 -= num2;
+      else
+         lef2 += num2 * -1;
+      if(Math.floor(lef2) != -1) 
+      {
+         document.getElementById(target).style.visibility = "visible";
+         document.getElementById(target).style.left = Math.floor(lef2) + "px";
+      }
+      else
+      {
+         document.getElementById(target).style.visibility = "visible";
+         document.getElementById(target).style.left = Math.floor(lef2 + 1) + "px";
+      }
+      if(lef2 >= 0)
+         top2 -= num3;
+      else
+         top2 += num3 * -1;
+      if(Math.floor(top2) != -1)
+         document.getElementById(target).style.top = Math.floor(top2) + "px";
+      else
+         document.getElementById(target).style.top = Math.floor(top2 + 1) + "px";
+
+      setTimeout("fly3('"+target+"',"+lef2+","+num2+","+top2+","+num3+")",50);
+   }
+}
+stfly();
+</script>
+
+<!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<div style="">
+<script type="text/javascript">
+var no = 45;
+var speed = 1;
+var bubble = new Array();
+bubble[0] = "bubble.gif"
+bubble[1] = "bubble.gif"
+bubble[2] = "bubble.gif"
+
+var dx, xp, yp;    // coordinate and position variables
+var am, stx, sty;  // amplitude and step variables
+var i, doc_width = 800, doc_height = 1800;
+
+if (typeof window.innerWidth != 'undefined')
+{
+   doc_width = window.innerWidth;
+   doc_height = window.innerHeight;
+}
+else 
+if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0)
+{
+   doc_width = document.documentElement.clientWidth;
+   doc_height = document.documentElement.clientHeight;
+}
+else
+{
+   doc_width = document.getElementsByTagName('body')[0].clientWidth;
+   doc_height = document.getElementsByTagName('body')[0].clientHeight;
+}
+
+dx = new Array();
+xp = new Array();
+yp = new Array();
+am = new Array();
+stx = new Array();
+sty = new Array();
+j = 0;
+
+for (i = 0; i < no; ++ i) 
+{
+   dx[i] = 0; 
+   xp[i] = Math.random()*(doc_width-50);
+   yp[i] = Math.random()*doc_height;
+   am[i] = Math.random()*20;
+   stx[i] = 0.02 + Math.random()/10;
+   sty[i] = 0.7 + Math.random();
+  
+   if (i == 0) 
+   {
+      document.write("<div id=\"dot"+ i +"\" style=\"position: absolute; z-index: "+ i +"; visibility: visible; top: 15px; left: 15px; width:1;\"><img src=\"" + bubble[j] + "\" border=\"0\"><\/div>");
+   } 
+   else 
+   {
+      document.write("<div id=\"dot"+ i +"\" style=\"position: absolute; z-index: "+ i +"; visibility: visible; top: 15px; left: 15px; width:1;\"><img src=\"" + bubble[j] + "\" border=\"0\"><\/div>");
+   }
+   if (j == (bubble.length-1)) { j = 0; } else { j += 1; }
+}
+
+function DoBubble() 
+{  
+   for (i = 0; i < no; ++ i) 
+   {  
+      // iterate for every dot
+      yp[i] -= sty[i];
+      if (yp[i] < -50) 
+      {
+         xp[i] = Math.random()*(doc_width-am[i]-30);
+         yp[i] = doc_height;
+         stx[i] = 0.02 + Math.random()/10;
+         sty[i] = 0.7 + Math.random();
+      }
+      dx[i] += stx[i];
+     
+      document.getElementById("dot"+i).style.top = yp[i] + "px";
+      document.getElementById("dot"+i).style.left = xp[i] + am[i]*Math.sin(dx[i]) + "px";
+   }
+   setTimeout("DoBubble()", speed);
+}
+
+setTimeout('DoBubble()', 500);
+</script></div>
+
+<!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+<!--<div style="">
+<div style="position:absolute;width:100;height:15;color:red;font-size:32px;font-family:'Comfortaa',cursive;font-weight:normal;font-style:normal;text-decoration:none" id="cursortext">KHATRI SE KHATRA</div>
+<script type="text/javascript"> 
+function cursorInit()
+{ 
+   document.onmousemove = onMouseMove; 
+} 
+function onMouseMove(e)
+{
+   if (!e) 
+      var e = window.event||window.Event; 
+
+   if ('undefined' != typeof e.pageX) 
+   { 
+      x = e.pageX; 
+      y = e.pageY; 
+   } 
+   else 
+   { 
+      x = e.clientX + document.body.scrollLeft; 
+      y = e.clientY + document.body.scrollTop; 
+   } 
+
+   x += 10;
+   y += 10;
+
+   document.getElementById('cursortext').style.left = x + "px"; 
+   document.getElementById('cursortext').style.top = y + "px"; 
+}
+onload = cursorInit; 
+</script></div>-->
+
+<!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+	<!--<H1 class="welcome">My favourite Songs </H1>-->
+	<br><br>
+	
+	 
+    <audio class="mk" controls="" preload="none" autoplay="" name="media"><source src="/Songs/y2mate.com%20-%20%20Remix%20%20Solo%20Laila%20%20Hard%20Bass%20Dj%20Remix%20%20Ipsitaa%20%20Tanishk%20Bagchi%20Vayu%20%202021.mp3" type="audio/mpeg"></audio>
+<br><br>
+<script type="text/javascript">
+var message="Remix  Solo Laila  Hard Bass Dj Remix  Ipsitaa  Tanishk Bagchi Vayu  2021.mp3";
+var flashspeed=50;
+var n=0;
+
+document.write('<div style="color:#000000;font-family:Comfortaa,cursive;font-size:32px;font-weight:bold;font-style:normal;text-align:;text-decoration:none;">');
+for (m=0;m<message.length;m++)
+   document.write('<span id="neonlight'+m+'">'+message.charAt(m)+'<\/span>');
+document.write('<\/div>');
+
+function crossref(number)
+{
+   var crossobj = document.getElementById("neonlight"+number);
+   return crossobj;
+}
+function neon()
+{
+   if (n==0)
+   {
+      for (m=0;m<message.length;m++)
+         crossref(m).style.color="red";
+   }
+
+   crossref(n).style.color="#FFFF00";
+
+   if (n<message.length-1)
+   {
+      n++;
+   }
+   else
+   {
+      n=0;
+      clearInterval(flashing);
+      setTimeout("StartNeon()", 15);
+      return;
+   }
+}
+function StartNeon()
+{
+   if (document.all||document.getElementById)
+      flashing=setInterval("neon()", flashspeed)
+}
+StartNeon();
+</script><br><br>
+<!--<h1 class="song">Remix  Solo Laila  Hard Bass Dj Remix  Ipsitaa  Tanishk Bagchi Vayu  2021.mp3</h1>-->
+<audio controls="" autoplay="" preload="none" name="media"><source src="/Songs/y2mate.com%20-%20Age%2018Chora%2018%20ka%20Amit%20Dhull%20Remix%20musiyana%20lahoria%20production%20Dhol%20Mix.mp3" type="audio/mpeg"></audio>
+<br>
+
+
+<h1 class="song">Age 18Chora 18 ka Amit Dhull Remix musiyana lahoria production Dhol Mix.mp3</h1>
+<br>
+<audio controls="" autoplay="" preload="none"  name="media"><source src="/Songs/y2mate.com%20-%20Badnam%20Gabru%20Remix%20Masoom%20Sharma%20%20New%20Haryanvi%20Song%202021%20%20Dj%20Aps%20Sanjay.mp3" type="audio/mpeg"></audio>
+        <br>
+  <h1 class="song">Badnam Gabru Remix Masoom Sharma  New Haryanvi Song 2021  Dj Aps Sanjay.mp3</h1>	
+         <br>
+    <audio controls="" autoplay="" preload="none" name="media"><source src="/Songs/y2mate.com%20-%20Bewda%20Ki%20Dhal%20Remix%20Song%20Dj%20Choudhary%20Dhand%20%20Rahul%20kadyan%20New%20Haryanvi%20Song%20Dj%20Remix%202020.mp3" type="audio/mpeg"></audio>
+         <br>
+  <h1 class="song">Bewda Ki Dhal Remix Song Dj Choudhary Dhand  Rahul kadyan New Haryanvi Song Dj Remix 2020.mp3</h1>	
+         <br>
+    <audio controls="" autoplay="" preload="none" name="media"><source src="/Songs/y2mate.com%20-%20Carrom%20Ki%20Rani%20%20Ramji%20Gulati%20%20Jannat%20Zubair%20%20Mr%20Faisu%20%20Official%20Video.mp3" type="audio/mpeg"></audio>
+         <br>
+  <h1 class="song">Carrom Ki Rani  Ramji Gulati  Jannat Zubair  Mr Faisu  Official Video.mp3</h1>	
+         <br>
+    <audio controls="" autoplay="" preload="none"  name="media"><source src="/Songs/y2mate.com%20-%20Chan%20Chan%20Remix%20%20Chan%20Chan%20Renuka%20Panwar%20Song%20Dj%20Mix%20%20Latest%20Haryanvi%20Songs%202021Salesh%20Blaster.mp3" type="audio/mpeg"></audio>
+         <br>
+ <!--<div style="">
+<script type="text/javascript">
+var no = 15;
+var speed = 2;
+var bubble = new Array();
+bubble[0] = "bubble.gif"
+bubble[1] = "bubble.gif"
+bubble[2] = "bubble.gif"
+
+var dx, xp, yp;    // coordinate and position variables
+var am, stx, sty;  // amplitude and step variables
+var i, doc_width = 800, doc_height = 1800;
+
+if (typeof window.innerWidth != 'undefined')
+{
+   doc_width = window.innerWidth;
+   doc_height = window.innerHeight;
+}
+else 
+if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0)
+{
+   doc_width = document.documentElement.clientWidth;
+   doc_height = document.documentElement.clientHeight;
+}
+else
+{
+   doc_width = document.getElementsByTagName('body')[0].clientWidth;
+   doc_height = document.getElementsByTagName('body')[0].clientHeight;
+}
+
+dx = new Array();
+xp = new Array();
+yp = new Array();
+am = new Array();
+stx = new Array();
+sty = new Array();
+j = 0;
+
+for (i = 0; i < no; ++ i) 
+{
+   dx[i] = 0; 
+   xp[i] = Math.random()*(doc_width-50);
+   yp[i] = Math.random()*doc_height;
+   am[i] = Math.random()*20;
+   stx[i] = 0.02 + Math.random()/10;
+   sty[i] = 0.7 + Math.random();
+  
+   if (i == 0) 
+   {
+      document.write("<div id=\"dot"+ i +"\" style=\"position: absolute; z-index: "+ i +"; visibility: visible; top: 15px; left: 15px; width:1;\"><img src=\"" + bubble[j] + "\" border=\"0\"><\/div>");
+   } 
+   else 
+   {
+      document.write("<div id=\"dot"+ i +"\" style=\"position: absolute; z-index: "+ i +"; visibility: visible; top: 15px; left: 15px; width:1;\"><img src=\"" + bubble[j] + "\" border=\"0\"><\/div>");
+   }
+   if (j == (bubble.length-1)) { j = 0; } else { j += 1; }
+}
+
+function DoBubble() 
+{  
+   for (i = 0; i < no; ++ i) 
+   {  
+      // iterate for every dot
+      yp[i] -= sty[i];
+      if (yp[i] < -50) 
+      {
+         xp[i] = Math.random()*(doc_width-am[i]-30);
+         yp[i] = doc_height;
+         stx[i] = 0.02 + Math.random()/10;
+         sty[i] = 0.7 + Math.random();
+      }
+      dx[i] += stx[i];
+     
+      document.getElementById("dot"+i).style.top = yp[i] + "px";
+      document.getElementById("dot"+i).style.left = xp[i] + am[i]*Math.sin(dx[i]) + "px";
+   }
+   setTimeout("DoBubble()", speed);
+}
+
+setTimeout('DoBubble()', 500);
+</script></div>
+
+-->
+<h1 class="song">Chan Chan Remix  Chan Chan Renuka Panwar Song Dj Mix  Latest Haryanvi Songs 2021Salesh Blaster.mp3</h1>	
+<br>
+<audio controls="" autoplay="" preload="none" name="media"><source src="/Songs/y2mate.com%20-%20Dada%20Lahi%20Daaru%20DJ%20Remix%20%20Amit%20Saini%20Rohtakiya%20%20Dada%20Lai%20Daru%20Remix%20%20Dada%20Lahi%20Daru%20DJ%20Remix%20Song.mp3" type="audio/mpeg"></audio>
+<br>
+<h1 class="song">Dada Lahi Daaru DJ Remix  Amit Saini Rohtakiya  Dada Lai Daru Remix  Dada Lahi Daru DJ Remix Song.mp3</h1>	
+<br>
+<audio controls="" autoplay="" preload="none" name="media"><source src="/Songs/y2mate.com%20-%20Daman%20Bojh%20Ka%20Remix%20Pranjal%20Dahiya%20Kuldeep%20Rathee%20New%20Haryanvi%20Songs%20Haryanavi%202021.mp3" type="audio/mpeg"></audio>
+<br>
+<h1 class="song">Daman Bojh Ka Remix Pranjal Dahiya Kuldeep Rathee New Haryanvi Songs Haryanavi 2021.mp3</h1>	
+<br>
+<audio controls="" autoplay="" preload="none" name="media"><source src="/Songs/y2mate.com%20-%20Delhi%20Jaane%20Tere%20Yaar%20Ne%20Remix%20Song%20%20Amit%20Saini%20Rohatakiya%20Anjali%20Raghav%20%20New%20Haryanvi%20Songs%202021.mp3" type="audio/mpeg"></audio>
+<br>
+<h1 class="song">Delhi Jaane Tere Yaar Ne Remix Song  Amit Saini Rohatakiya Anjali Raghav  New Haryanvi Songs 2021.mp3</h1>	
+<br>
+<audio controls="" autoplay="" preload="none" name="media"><source src="/Songs/y2mate.com%20-%20Haryanvi%20Beat%20Remix%20%20Haryanvi%20Beat%20Diler%20Kharkiya%20Ft%20Salesh%20Blaster%20%20Latest%20Haryanvi%20Dj%20Mix%20Song.mp3" type="audio/mpeg"></audio>
+<br>
+<h1 class="song">Haryanvi Beat Remix  Haryanvi Beat Diler Kharkiya Ft Salesh Blaster  Latest Haryanvi Dj Mix Song.mp3</h1>	
+<br>
+<audio controls="" autoplay="" preload="none" name="media"><source src="/Songs/y2mate.com%20-%20Kaka%20%20Teeji%20Seat%20Official%20Video%20Aakanksha%20Sareen%20%20Yaarvelly%20Productions%20%20New%20Punjabi%20Songs%202021.mp3" type="audio/mpeg"></audio>
+<br>
+<h1 class="song">Kaka  Teeji Seat Official Video Aakanksha Sareen  Yaarvelly Productions  New Punjabi Songs 2021.mp3</h1>	
+<br>
+<audio controls="" autoplay="" preload="none" name="media"><source src="/Songs/y2mate.com%20-%20LIBAAS%20%20Dhol%20Remix%20%20Kaka%20Dj%20Lakhan%20by%20LAHORIA%20PRODUCTION%20New%20Punjabi%20Songs%202020%20Dj%20Mix.mp3" type="audio/mpeg"></audio>
+<br>
+<h1 class="song">LIBAAS  Dhol Remix  Kaka Dj Lakhan by LAHORIA PRODUCTION New Punjabi Songs 2020 Dj Mix.mp3</h1>	
+<br>
+<audio controls="" autoplay="" preload="none" name="media"><source src="/Songs/y2mate.com%20-%20Lut%20Gaye%20Full%20Song%20Emraan%20Hashmi%20Yukti%20%20Jubin%20N%20Tanishk%20B%20Manoj%20M%20%20Bhushan%20K%20%20RadhikaVinay.mp3" type="audio/mpeg"></audio>
+<br>
+<h1 class="song">Lut Gaye Full Song Emraan Hashmi Yukti  Jubin N Tanishk B Manoj M  Bhushan K  RadhikaVinay.mp3</h1>	
+<br>
+<audio controls="" autoplay="" preload="none" name="media"><source src="/Songs/y2mate.com%20-%20Middle%20Finger%20Khasa%20Aala%20Chahar%20Remix%20Song%20%20New%20Hr%20Song%202020%20%20Middle%20Finger%20Dj%20Remix%20Song%202020.mp3" type="audio/mpeg"></audio>
+<br>
+<h1 class="song">Middle Finger Khasa Aala Chahar Remix Song  New Hr Song 2020  Middle Finger Dj Remix Song 2020.mp3</h1>	
+<br>
+<audio controls="" autoplay="" preload="none" name="media"><source src="/Songs/y2mate.com%20-%20Sapna%20Choudhary%20New%20Song%20%20MILKY%20%20Vishvajeet%20%20Ruchika%20Jangid%20%20New%20Haryanvi%20Songs%20Haryanavi%202021.mp3" type="audio/mpeg"></audio>
+<br>
+<h1 class="song">Sapna Choudhary New Song  MILKY  Vishvajeet  Ruchika Jangid  New Haryanvi Songs Haryanavi 2021.mp3</h1>	
+<br>	
+<audio controls="" autoplay="" preload="none" name="media"><source src="/Songs/y2mate.com%20-%20Sira%20E%20Hou%20Official%20Video%20%20Amrit%20Maan%20%20Nimrat%20Khaira%20%20Desi%20Crew%20%20Latest%20Punjabi%20Songs%202021.mp3" type="audio/mpeg"></audio>
+<br>
+<h1 class="song">Sira E Hou Official Video  Amrit Maan  Nimrat Khaira  Desi Crew  Latest Punjabi Songs 2021.mp3</h1>	
+<br>
+<audio controls="" autoplay="" preload="none" name="media"><source src="/Songs/y2mate.com%20-%20Solo%20Laila%20Full%20Song%20Ipsitaa%20%20Tanishk%20Bagchi%20Vayu%20%20TSeries.mp3" type="audio/mpeg"></audio>
+<br>
+<h1 class="song">Solo Laila Full Song Ipsitaa  Tanishk Bagchi Vayu  TSeries.mp3</h1>	
+<br>
+<audio controls="" autoplay="" preload="none" name="media"><source src="/Songs/y2mate.com%20-%20Sona%20Lagda%20Official%20Video%20Sukriti%20Prakriti%20Sukhe%20%20BharattSaurabh%20%20Satti%20Dhillon%20%20New%20Song.mp3" type="audio/mpeg"></audio>
+<br>
+<h1 class="song">Sona Lagda Official Video Sukriti Prakriti Sukhe  BharattSaurabh  Satti Dhillon  New Song.mp3</h1>	
+<br>
+<audio controls="" autoplay="" preload="none"  name="media"><source src="/Songs/y2mate.com%20-%20Tera%20Yaar%20Jamanat%20Pe%20Aaya%20Dj%20Remix%20Song%20%20Kalyug%20Pardeep%20Boora%20Remix%20%20Bata%20Kiski%20Fielding%20Lani%20Se.mp3" type="audio/mpeg"></audio>
+<br>
+<h1 class="song">Tera Yaar Jamanat Pe Aaya Dj Remix Song  Kalyug Pardeep Boora Remix  Bata Kiski Fielding Lani Se.mp3</h1>	
+<br>
+<audio controls="" autoplay="" preload="none"  name="media"><source src="/Songs/y2mate.com%20-%20Thoda%20Thoda%20Pyaar%20%20Sidharth%20MalhotraNeha%20SharmaStebin%20BenNilesh%20AhujaKumaarZee%20Music%20Originals.mp3" type="audio/mpeg"></audio>
+<br>
+<h1 class="song">Thoda Thoda Pyaar  Sidharth MalhotraNeha SharmaStebin BenNilesh AhujaKumaarZee Music Originals.mp3</h1>	
+<br>
+<audio controls="" autoplay="" preload="none" name="media"><source src="/Songs/y2mate.com%20-%20Tokyo%20Drift%20%20Teriyaki%20Boyz%20PedroDJDaddy%20Remix%20Bass%20Boosted.mp3" type="audio/mpeg"></audio>
+<br>
+<h1 class="song">Tokyo Drift  Teriyaki Boyz PedroDJDaddy Remix Bass Boosted.mp3</h1>	
+<br>
+<audio controls="" autoplay="" preload="none"  name="media"><source src="/Songs/y2mate.com%20-%20Waalian%20%20Remix%20%20Harnoor%20%20DJ%20Sumit%20Rajwanshi%20%20SR%20Music%20Official%20%20Latest%20Remix%202020.mp3" type="audio/mpeg"></audio>
+<br>
+<h1 class="song">Waalian  Remix  Harnoor  DJ Sumit Rajwanshi  SR Music Official  Latest Remix 2020.mp3</h1>	
+<br>
+<audio controls="" autoplay="" preload="none" name="media"><source src="/Songs/y2mate.com%20-%20Yaar%20Hariyana%20Te%20Dj%20Remix%20Khasa%20Aala%20Chahar%20New%20Hr%20Song%202021%20Dj%20Remix%20Yaar%20Haryane%20Te%20KD%20Dj%20Mix%202020.mp3" type="audio/mpeg"></audio>
+<br>
+<h1 class="song">Yaar Hariyana Te Dj Remix Khasa Aala Chahar New Hr Song 2021 Dj Remix Yaar Haryane Te KD Dj Mix 2020.mp3</h1>	
+<br>
+<audio controls=""  autoplay="" preload="none"  name="media"><source src="/Songs/y2mate.com - Aaj Unse Milna Hai Hame Dj Remix Song  Prem Ratan Dhan Payo  Salman Khan  New Hindi Song 2020.mp3" type="audio/mpeg"></audio>
+<br>
+<h1 class="song">Aaj Unse Milna Hai Hame Dj Remix Song  Prem Ratan Dhan Payo  Salman Khan  New Hindi Song 2020.mp3</h1>	
+<br>
+<br>
+
+<br>
+<br>
+<script class="java" type="text/javascript">
+document.write("<div style='font-family:Comfortaa,cursive;font-size:14px;color:#000000;text-decoration:none;font-weight:normal;font-style:normal;text-align:left;text-decoration:none;color:black;'>" + navigator.appName + " " + navigator.appVersion + "<\/div>");
+</script>
+  </div>
+</body>
+</html>
+
+
+
+
+
+<!--<audio controls autoplay>
+<source src="/Songs/y2mate.com - Aaj Unse Milna Hai Hame Dj Remix Song  Prem Ratan Dhan Payo  Salman Khan  New Hindi Song 2020.mp3" type="audio/ogg">
+</audio>-->
